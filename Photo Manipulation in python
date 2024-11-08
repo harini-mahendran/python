@@ -1,0 +1,20 @@
+from PIL import Image, ImageFilter
+
+# Load an image
+image_path = 'path_to_your_image.jpg'  # Replace with the path to your image file
+image = Image.open(image_path)
+
+# Resize the image
+new_size = (800, 600)  # Specify the new size
+resized_image = image.resize(new_size)
+
+# Apply a blur filter
+blurred_image = resized_image.filter(ImageFilter.BLUR)
+
+# Save the modified image
+output_path = 'modified_image.jpg'  # Specify the path for the output image
+blurred_image.save(output_path)
+
+# Display the original and modified images
+image.show(title="Original Image")
+blurred_image.show(title="Blurred Image")
